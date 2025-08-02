@@ -19,6 +19,7 @@ func (s *UserService) GetUser(ctx context.Context, req *pb.UserRequest) (*pb.Use
 	return &pb.UserResponse{
 		Name: "Yash",
 		Age:  21,
+		Id:   req.Id,
 	}, nil
 }
 

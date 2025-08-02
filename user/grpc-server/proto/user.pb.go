@@ -69,6 +69,7 @@ type UserResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Name          string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	Age           int32                  `protobuf:"varint,2,opt,name=age,proto3" json:"age,omitempty"`
+	Id            string                 `protobuf:"bytes,3,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -117,6 +118,13 @@ func (x *UserResponse) GetAge() int32 {
 	return 0
 }
 
+func (x *UserResponse) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
 var File_user_proto protoreflect.FileDescriptor
 
 const file_user_proto_rawDesc = "" +
@@ -124,10 +132,11 @@ const file_user_proto_rawDesc = "" +
 	"\n" +
 	"user.proto\x12\x04user\"\x1d\n" +
 	"\vUserRequest\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\"4\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\"D\n" +
 	"\fUserResponse\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x10\n" +
-	"\x03age\x18\x02 \x01(\x05R\x03age2?\n" +
+	"\x03age\x18\x02 \x01(\x05R\x03age\x12\x0e\n" +
+	"\x02id\x18\x03 \x01(\tR\x02id2?\n" +
 	"\vUserService\x120\n" +
 	"\aGetUser\x12\x11.user.UserRequest\x1a\x12.user.UserResponseB\x13Z\x11grpc-server/protob\x06proto3"
 
